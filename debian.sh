@@ -16,7 +16,7 @@ sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.19-1_all.deb
 sudo apt install ./mysql-apt-config_0.8.19-1_all.deb
 sudo sed -i  "s/jessie/buster/g" /etc/apt/sources.list.d/mysql.list
 sudo apt update
-sudo apt install mysql-server
+sudo apt install -y mysql-server
 sudo apt update
 sudo apt upgrade
 sudo apt-get -y install mysql-community-server
