@@ -22,3 +22,4 @@ sudo apt upgrade
 sudo apt-get -y install mysql-community-server
 sudo apt update
 sudo apt upgrade
+sudo mysql -u root -p'XMPLAY1300' < db_wordpress.sql
