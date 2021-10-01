@@ -10,9 +10,6 @@ sudo apt install -y php
 sudo apt install -y php-xml
 sudo apt install -y php-mysql
 sudo apt install -y php-zip
-sudo wget https://es.wordpress.org/latest-es_AR.tar.gz
-sudo tar xf latest-es_AR.tar.gz -C /var/www/html
-sudo mv wp-config.php /var/www/html/wordpress/
 sudo chown -R www-data:www-data /var/www/html/
 sudo systemctl restart apache2
 sudo apt install -y curl
@@ -25,5 +22,6 @@ sudo wget https://github.com/wp-cli/wp-cli/raw/master/utils/wp-completion.bash
 sudo echo 'source /home/debian/wp-completion.bash' >> /home/debian/.bashrc
 cd /var/www/html/
 sudo -u www-data wp core download --locale=es_AR
-source ~/.bashrc
+sudo -u www-data wp core config --dbname='wordpress' --dbuser='worpress' --dbpass='password123' --dbhost='localhost' --dbprefix='wp_'
+sudo -u www-data wp core install --url='111.111.11.111' --title='Alto blog, ameo!' --admin_user='USUARIO_WORDPRESS' --admin_password='PASSWORD_WORDPRESS' --admin_email='momavac620@ergowiki.com'
 hostname -I
