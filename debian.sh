@@ -13,6 +13,7 @@ sudo apt install -y php-zip
 sudo wget https://es.wordpress.org/latest-es_AR.tar.gz
 sudo tar xf latest-es_AR.tar.gz -C /var/www/html
 sudo mv wp-config.php /var/www/html/wordpress/
+sudo chown -R www-data:www-data /var/www/html/
 sudo systemctl restart apache2
 sudo apt install -y curl
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
@@ -20,5 +21,9 @@ php wp-cli.phar --info
 chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 cd 
-wget https://github.com/wp-cli/wp-cli/raw/master/utils/wp-completion.bash
+sudo wget https://github.com/wp-cli/wp-cli/raw/master/utils/wp-completion.bash
+sudo echo 'source /home/debian/wp-completion.bash' >> /home/debian/.bashrc
+cd /var/www/html/
+sudo -u www-data wp core download --locale=es_AR
+source ~/.bashrc
 hostname -I
