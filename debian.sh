@@ -26,8 +26,8 @@ sudo mysql -u root -p'XMPLAY1300' < db_wordpress.sql
 sudo apt -y install php7.4
 sudo apt -y install php-mysql
 sudo wget https://es.wordpress.org/latest-es_AR.tar.gz
-sudo tar xf latest-es_ES.tar.gz -C /var/www/html
-sudo mv wp-config.php /var/www/html/wordpress
+sudo tar xf latest-es_AR.tar.gz -C /var/www/html
+sudo mv wp-config.php /var/www/html/wordpress/
 sudo apt install -y vim
 sudo systemctl restart apache2
 hostname -I
